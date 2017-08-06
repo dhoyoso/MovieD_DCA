@@ -10,7 +10,7 @@ import { Movie } from '../models/Movie';
 @Injectable()
 export class MovieService {
     private headers = new Headers({"Content-Type": "application/json"});
-    private movieUrl = 'http://localhost:3000';
+    private movieUrl = 'http://10.131.137.219:5000';
 
   constructor(private http: Http) {
     }
