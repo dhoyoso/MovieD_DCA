@@ -18,26 +18,26 @@ export class HomeComponent implements  OnInit {
   @Input() public editingtitle:string;
   @Input() public editingyear:string;
   @Input() public editingdirector:string;
-  @Input() private editingsize:string;
-  @Input() private editinggenre:string;
-  @Input() private editingvisibility:string;
-  @Input()  private editingowner:string;
-  @Input()  private editingshared:string[];
-  @Input() private editingurl:string;
-  private searched2:string;
-  private searched1:string;
-  private genres:string[];
-  private visibility:string[];
-  private showingMoviesRow1:Movie[];
-  private showingMoviesRow2:Movie[];
-  private allMovies:Movie[];
-  private activeUser:User;
-  private pager:number[];
-  private lastPage: number;
-  private numberOfPages: number;
-  private isLogged: boolean;
-  private myContents: boolean;
-  private divHeight:string;
+  @Input() public editingsize:string;
+  @Input() public editinggenre:string;
+  @Input() public editingvisibility:string;
+  @Input()  public editingowner:string;
+  @Input()  public editingshared:string[];
+  @Input() public editingurl:string;
+  public searched2:string;
+  public searched1:string;
+  public genres:string[];
+  public visibility:string[];
+  public showingMoviesRow1:Movie[];
+  public showingMoviesRow2:Movie[];
+  public allMovies:Movie[];
+  public activeUser:User;
+  public pager:number[];
+  public lastPage: number;
+  public numberOfPages: number;
+  public isLogged: boolean;
+  public myContents: boolean;
+  public divHeight:string;
 
 
   constructor(private userService:UserService,private movieService: MovieService) {
