@@ -420,12 +420,12 @@ export class HomeComponent implements  OnInit {
 
   }
 
-  deleteThisAccount(){
+  deleteThisAccount():void{
     this.userService.getLogUserInfo().then(res=>{
-      this.logout();
+      //this.logout();
       this.userService.deleteUser(JSON.parse(res._body).username).then(res=>{
         console.log(res);
-        this.closeconfirmAccountModal()
+        this.closeconfirmAccountModal();
       })
     })
   }
