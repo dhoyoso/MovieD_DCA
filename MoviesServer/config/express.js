@@ -36,7 +36,7 @@ module.exports = function(app, config) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
-  });
+  });  
 
   if(app.get('env') === 'development'){
     app.use(function (err, req, res, next) {

@@ -91,7 +91,7 @@
       <br>
         <div class="row" id="row2">
           <div *ngFor="let movie2 of showingMoviesRow2" class="col-lg-3 col-md-4 col-sm-6">
-            <article class="card">
+            <article class="card" [style.height]="divHeight" >
               <header class="title-header">
                 <h3>{{movie2.title}}</h3>
               </header>
@@ -105,7 +105,7 @@
                 <p class="tagline card-text text-xs-center">Size: {{movie2.size}}</p>
                 <a class="btn btn-primary btn-block text-white"><i class="fa fa-eye"></i> Watch Now</a>
                 <a *ngIf="myContents" data-toggle="modal" data-target="#editModal"  (click)="getMovieToEdit(movie2,movie2.genre)"  class="btn btn-success btn-block text-white"><i class="fa fa-pencil "></i> Edit</a>
-                <a *ngIf="myContents" (click)="deleteThisMovie(movie2)" class="btn btn-danger btn-block text-white"><i class="fa fa-trash "></i> Trash</a>
+                <a *ngIf="myContents" (click)="saveMovieToDeleteAndOpenConfirmModal(movie2)" class="btn btn-danger btn-block text-white"><i class="fa fa-trash "></i> Trash</a>
                 <div *ngIf="myContents" class="searchshare">
                   <input #addUser2 id="{{movie2._id}}" [ngModel]="searched2"  [ngModelOptions]="{standalone: true}"  type="text" class="inputshare form-control input-sm" maxlength="64" placeholder="Username" />
                   <button type="submit" (click)="shareWith(addUser2.value,movie2)"  class="btn btnshare btn-primary btn-sm">Share</button>

@@ -55,7 +55,6 @@ export class HomeComponent implements  OnInit {
     })
     this.movieService.getAllMovies().then(res=> {
       this.allMovies = res;
-      console.log(res);
       this.genres = ["Action", "Adventure", "Comedy", "Crime", "Drama", "Romance", "Horror", "Musical", "Science fiction", "Mystery"];
       this.visibility = ["public", "private"];
       /**
@@ -422,9 +421,10 @@ export class HomeComponent implements  OnInit {
 
   deleteThisAccount():void{
     this.userService.getLogUserInfo().then(res=>{
-      //this.logout();
-      this.userService.deleteUser(JSON.parse(res._body).username).then(res=>{
-        console.log(res);
+        this.logout();
+	let username = JSON.parse(res._body).username;
+	this.userService.deleteUser(username).then(ress=>{
+        console.log(ress);
         this.closeconfirmAccountModal();
       })
     })

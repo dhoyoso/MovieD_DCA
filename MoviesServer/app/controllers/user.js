@@ -52,6 +52,7 @@ module.exports = {
     })
   },
   deleteUser: function (req, res) {
+    console.log(req.body);
     User.findOneAndRemove({username: req.body.username}, function (err) {
       if (!err) {
         res.status(200).send();

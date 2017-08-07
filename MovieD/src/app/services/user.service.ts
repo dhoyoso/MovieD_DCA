@@ -12,7 +12,7 @@ import { User } from '../models/User';
 
 @Injectable()
 export class UserService {
-  private headers = new Headers();
+  private headers = new Headers({"Content-Type":"application/json"});
   private passheaders = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
 
 
@@ -66,6 +66,7 @@ export class UserService {
 
 
   deleteUser(username: string): Promise<any>{
+    console.log(username);
     let url = this.userUrl + "/deleteUser";
     return this.http.post(url, JSON.stringify({username:username}), {headers: this.headers})
       .toPromise()
